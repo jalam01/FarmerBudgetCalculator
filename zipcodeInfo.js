@@ -8,7 +8,7 @@ const mockData = {
   // Mock Eco-Friendly Suggestions
   const ecoAlternatives = {
     'irrigation': { regular: 'Traditional Irrigation', eco: 'Drip Irrigation' },
-    'fertilizer': { regular: 'Chemical Fertilizer', eco: 'Organic Fertilizer' },
+    //'fertilizer': { regular: 'Chemical Fertilizer', eco: 'Organic Fertilizer' },
     'tractor': { regular: 'Gas', eco: 'Biofuels' }
   };
   
