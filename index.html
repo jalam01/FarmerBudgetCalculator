@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Agricultural Resources Materials</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .container {
+      margin: 20px 0;
+    }
+    #eco-results {
+      margin-top: 20px;
+      color: green;
+    }
+    /* Style for the map */
+    #map {
+      width: 100%;
+      height: 400px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Financial Agricultural Resources Materials</h1>
+
+  <!-- ZIP Code input -->
+  <div class="container">
+    <label for="zipcode">Enter Your ZIP Code:</label>
+    <input type="text" id="zipcode" placeholder="Enter ZIP code">
+    <button onclick="getPricing()">Get Local Pricing</button>
+  </div>
+
+  <!-- Display Pricing Results -->
+  <div id="pricing-results"></div>
+
+  <!-- Material Selection -->
+  <div class="container">
+    <label for="material">Choose Material:</label>
+    <select id="material">
+      <option value="irrigation">Irrigation</option>
+      <option value="fertilizer">Fertilizer</option>
+      <option value="tractor">Tractor</option>
+      <option value="place holder">Place Holder</option>
+    </select>
+    <button onclick="getEcoAlternative()">Get Eco-Friendly Alternative</button>
+  </div>
+
+  <!-- Display Eco-Friendly Results -->
+  <div id="eco-results"></div>
+
+  <!-- Google Maps Display -->
+  <div id="map"></div>
+
+  <script>
+    // Mock Data for Pricing and Sales Tax based on ZIP code
+    const mockData = {
+      '10001': { sales_tax: 0.08, material_cost: 150 },
+      '90210': { sales_tax: 0.07, material_cost: 180 },
+      '94110': { sales_tax: 0.09, material_cost: 160 }
+    };
+
+    // Mock Eco-Friendly Suggestions
+    const ecoAlternatives = {
+      'irrigation': { regular: 'Traditional Irrigation', eco: 'Drip Irrigation' },
+      'fertilizer': { regular: 'Chemical Fertilizer', eco: 'Organic Fertilizer' }
+    };
+
+    // Initialize Google Map
+    let map;
+    function initMap() {
+      // Create a map centered around a default location (e.g., San Francisco)
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 37.7749, lng: -122.4194 }, // San Francisco coordinates
+        zoom: 10
+      });
+
+      // Add click event listener to get latitude and longitude
+      google.maps.event.addListener(map, 'click', function(event) {
+        const lat = event.latLng.lat();
+        const lng = event.latLng.lng();
+        getZipCodeFromLatLng(lat, lng);
+      });
+    }
+
+    // Function to get ZIP Code based on latitude and longitude
+    function getZipCodeFromLatLng(lat, lng) {
+      const geocoder = new google.maps.Geocoder();
+      const latlng = { lat: lat, lng: lng };
+
+      geocoder.geocode({ location: latlng }, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+          if (results[0]) {
+            // Loop through the address components to find the ZIP code
+            for (let i = 0; i < results[0].address_components.length; i++) {
+              const component = results[0].address_components[i];
+              if (component.types.includes("postal_code")) {
+                const zipCode = component.long_name;
+                document.getElementById("zipcode").value = zipCode;
+                alert('You clicked on latitude: ' + lat + ' and longitude: ' + lng + ' — ZIP Code: ' + zipCode);
+                break;
+              }
+            }
+          }
+        } else {
+          alert("Could not determine ZIP code.");
+        }
+      });
+    }
+
+    // Function to handle pricing based on ZIP code
+    function getPricing() {
+      const zipcode = document.getElementById("zipcode").value;
+      const pricing = mockData[zipcode];
+
+      if (pricing) {
+        document.getElementById("pricing-results").innerHTML = `
+          <p>Local Sales Tax: ${pricing.sales_tax * 100}%</p>
+          <p>Material Cost: $${pricing.material_cost}</p>
+        `;
+      } else {
+        document.getElementById("pricing-results").innerHTML = "<p>No data available for this ZIP code.</p>";
+      }
+    }
+
+    // Function to handle eco-friendly suggestions based on material choice
+    function getEcoAlternative() {
+      const material = document.getElementById("material").value;
+      const alternative = ecoAlternatives[material];
+
+      if (alternative) {
+        document.getElementById("eco-results").innerHTML = `
+          <p>Eco-Friendly Alternative: ${alternative.eco}</p>
+        `;
+      } else {
+        document.getElementById("eco-results").innerHTML = "<p>No eco-friendly alternative found for this material.</p>";
+      }
+    }
+  </script>
+</body>
+</html>
