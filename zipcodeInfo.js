@@ -38,6 +38,6 @@ const mockData = {
       `;
     } else {
       document.getElementById("eco-results").innerHTML = "<p>No eco-friendly alternative found for this material.</p>";
-    }
+    } 
   }
   
