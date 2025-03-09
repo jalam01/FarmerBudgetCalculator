@@ -25,9 +25,10 @@ const mockData = {
           
   // Function to handle pricing based on ZIP code
   function getPricing() {
+    console.log(1)
     const zipcode = document.getElementById("zipcode").value;
     const pricingPerFA = mockData[zipcode]; //price per Foot Acre for this zip code
-  }
+  
 
   if (pricingPerFA) {
     var m1 = document.getElementById("current_method");
@@ -58,12 +59,6 @@ const mockData = {
     
 
 
-
-
-
-
-
-
     document.getElementById("pricing-results").innerHTML = `
 
     `;
@@ -71,5 +66,5 @@ const mockData = {
     document.getElementById("pricing-results").innerHTML = "<p>No data available for this ZIP code.</p>";
   }
 
-
+  }
   
