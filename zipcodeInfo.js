@@ -19,14 +19,14 @@ const mockData = {
     const pricingPerFA = mockData[zipcode]; //price per Foot Acre for this zip code
   
   
-    //if (pricing) {
-      //document.getElementById("pricing-results").innerHTML = `
-        //<p>95340: ${water_per_foot_acre}%</p>
-        //<p>91962: ${water_per_foot_acre}%</p>
-        //<p>9: ${water_per_foot_acre}%</p>
-      //`;
-    //} else {
-     // document.getElementById("pricing-results").innerHTML = "<p>No data available for this ZIP code.</p>";
-    //}
+    if (pricing) {
+      document.getElementById("pricing-results").innerHTML = `
+        <p>95340: ${water_per_foot_acre}%</p>
+        <p>91962: ${water_per_foot_acre}%</p>
+        <p>91340: ${water_per_foot_acre}%</p>
+      `;
+    } else {
+      document.getElementById("pricing-results").innerHTML = "<p>No data available for this ZIP code.</p>";
+    }
   }
   
