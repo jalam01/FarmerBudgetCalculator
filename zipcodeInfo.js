@@ -6,27 +6,16 @@ const mockData = {
   };
   
   // Mock Eco-Friendly Suggestions
-  const ecoAlternatives = {
-    'Drip irrigation': { rank: '#1', eco: 'Best Option' },
-    'Central Pivot Irrigation': { rank: '#2', eco: 'Drip irrigation' },
-    'Sprinkler': { rank: '#3', eco: 'Central Pivot Irrigation' },
-    'Flood irrigation': { rank: '#4', eco: 'Sprinkler' },
-  };
+  //const ecoAlternatives = {
+    //'Drip irrigation': { rank: '#1', eco: 'Best Option' },
+    //'Central Pivot Irrigation': { rank: '#2', eco: 'Drip irrigation' },
+    //'Sprinkler': { rank: '#3', eco: 'Central Pivot Irrigation' },
+    //'Flood irrigation': { rank: '#4', eco: 'Sprinkler' },
+  //};
           
   // Function to handle pricing based on ZIP code
   function getPricing() {
     const zipcode = document.getElementById("zipcode").value;
     const pricingPerFA = mockData[zipcode]; //price per Foot Acre for this zip code
-  
-  
-    if (pricing) {
-      document.getElementById("pricing-results").innerHTML = `
-        <p>95340: ${water_per_foot_acre}%</p>
-        <p>91962: ${water_per_foot_acre}%</p>
-        <p>91340: ${water_per_foot_acre}%</p>
-      `;
-    } else {
-      document.getElementById("pricing-results").innerHTML = "<p>No data available for this ZIP code.</p>";
-    }
   }
   
