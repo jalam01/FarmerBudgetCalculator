@@ -1,4 +1,8 @@
+.container{
+    justify-content: center;
+    justify-items: center;
 
+}
 button {
     
     display: inline-block;
@@ -25,16 +29,12 @@ button {
   #pricing-results {
     margin-top: 20px;
     padding: 10px;
-    background-color: #95be7f; /* Light green background for pricing results */
-    border-left: 5px solid #36c275; /* Green left border */
   }
   
   /* Section for eco results */
   #eco-results {
     margin-top: 20px;
     padding: 10px;
-    background-color: #f0f9e9; /* Very light green background for eco results */
-    border-left: 5px solid #36c275; /* Green left border */
   }
   
   /* Map styling */
