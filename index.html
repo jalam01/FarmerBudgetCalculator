@@ -47,7 +47,7 @@
       <option value="Flood Irrigation">Flood Irrigation</option>
       <option value="Center Pivot">Center Pivot</option>
     </select> Vs
-    <label for="other_method"></label>
+    <label  for="other_method"></label>
     <select id="other_method"> 
       <option value="Sprinklers">Sprinklers</option>
       <option value="Drip Irrigation">Drip Irrigation</option>
@@ -59,7 +59,7 @@
 
   </div>
 
-  <button onclick="getEcoAlternative()">Get Price Comparison</button>
+  <button onclick="getPricing()">Get Price Comparison</button>
 
 
   <!-- Display Eco-Friendly Results -->
@@ -68,7 +68,7 @@
   <!-- Google Maps Display -->
   <div id="map"></div>
 
-  <script>
+  <script src ="zipcodeInfo.js">
     // Mock Data for Pricing and Sales Tax based on ZIP code
     const mockData = {
       '10001': { sales_tax: 0.08, material_cost: 150 },
@@ -83,20 +83,7 @@
     };
 
 
-    // Function to handle pricing based on ZIP code
-    function getPriceComparison() {
-      const zipcode = document.getElementById("zipcode").value;
-      const pricing = mockData[zipcode];
-
-      if (pricing) {
-        document.getElementById("pricing-results").innerHTML = `
-          <p>Local Sales Tax: ${pricing.sales_tax * 100}%</p>
-          <p>Material Cost: $${pricing.material_cost}</p>
-        `;
-      } else {
-        document.getElementById("pricing-results").innerHTML = "<p>No data available for this ZIP code.</p>";
-      }
-    }
+    
 
     // Function to handle eco-friendly suggestions based on material choice
     function getEcoAlternative() {
