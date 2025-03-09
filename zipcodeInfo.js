@@ -19,6 +19,7 @@ const mockData = {
     const pricingPerFA = mockData[zipcode]; //price per Foot Acre for this zip code
   
   
+<<<<<<< HEAD
     //if (pricing) {
       //document.getElementById("pricing-results").innerHTML = `
         //<p>95340: ${water_per_foot_acre}%</p>
@@ -28,5 +29,15 @@ const mockData = {
     //} else {
      // document.getElementById("pricing-results").innerHTML = "<p>No data available for this ZIP code.</p>";
     //}
+=======
+    if (pricing) {
+      document.getElementById("pricing-results").innerHTML = `
+        <p>Local Sales Tax: ${pricing.sales_tax * 100}%</p>
+        <p>Material Cost: $${pricing.material_cost}</p>
+      `;
+    } else {
+      document.getElementById("pricing-results").innerHTML = "<p>No data available for this ZIP code.</p>";
+    }
+>>>>>>> parent of 976f4ca (Added programatic pricing by zip code)
   }
   
