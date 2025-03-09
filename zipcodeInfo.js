@@ -1,8 +1,8 @@
 // Mock Data for Pricing and Sales Tax based on ZIP code
 const mockData = {
-    '10001': { sales_tax: 0.08, material_cost: 150 },
-    '90210': { sales_tax: 0.07, material_cost: 180 },
-    '94110': { sales_tax: 0.09, material_cost: 160 }
+    '95340': { water_per_foot_acre: 50.0 },
+    '91962': { water_per_foot_acre: 65.0 },
+    '91340': { water_per_foot_acre: 85.0 }
   };
   
   // Mock Eco-Friendly Suggestions
