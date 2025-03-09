@@ -25,7 +25,6 @@ const mockData = {
           
   // Function to handle pricing based on ZIP code
   function getPricing() {
-    console.log(1)
     const zipcode = document.getElementById("zipcode").value;
     const pricingPerFA = mockData[zipcode]; //price per Foot Acre for this zip code
   
@@ -38,23 +37,42 @@ const mockData = {
     var m2Loss = 999999;
     
     if (m1.value == "Sprinklers"){
-      m1Loss = pricingPerFA.water_per_foot_acre * irrigationEfficiency.Sprinklers;
+      m1Loss = pricingPerFA.water_per_foot_acre * (1-irrigationEfficiency.Sprinklers);
       
       
     }
     else if(m1.value == "Drip Irrigation"){
-      m1Loss = pricingPerFA.water_per_foot_acre * irrigationEfficiency.Drip_Irrigation;
+      m1Loss =  pricingPerFA.water_per_foot_acre * (1-irrigationEfficiency.Drip_Irrigation);
 
     }
     else if(m1.value == "Flood Irrigation"){
-      m1Loss = pricingPerFA.water_per_foot_acre * irrigationEfficiency.Flood_Irrigation;
+      m1Loss =  pricingPerFA.water_per_foot_acre * (1-irrigationEfficiency.Flood_Irrigation);
 
     }
     else if(m1.value == "Center Pivot"){
-      m1Loss = pricingPerFA.water_per_foot_acre * irrigationEfficiency.Center_Pivot;
+      m1Loss =  pricingPerFA.water_per_foot_acre * (1-irrigationEfficiency.Center_Pivot);
 
     }
     console.log(m1Loss);
+
+    if (m2.value == "Sprinklers"){
+      m2Loss = pricingPerFA.water_per_foot_acre * (1-irrigationEfficiency.Sprinklers);
+      
+      
+    }
+    else if(m2.value == "Drip Irrigation"){
+      m2Loss =  pricingPerFA.water_per_foot_acre * (1-irrigationEfficiency.Drip_Irrigation);
+
+    }
+    else if(m2.value == "Flood Irrigation"){
+      m2Loss =  pricingPerFA.water_per_foot_acre * (1-irrigationEfficiency.Flood_Irrigation);
+
+    }
+    else if(m2.value == "Center Pivot"){
+      m2Loss =  pricingPerFA.water_per_foot_acre * (1-irrigationEfficiency.Center_Pivot);
+
+    }
+    console.log(m2Loss);
 
     
 
