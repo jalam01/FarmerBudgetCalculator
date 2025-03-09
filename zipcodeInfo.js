@@ -13,7 +13,16 @@ const mockData = {
     "Center_Pivot":0.88
 
   };
-    
+  
+  
+  // Mock Eco-Friendly Suggestions
+  //const ecoAlternatives = {
+    //'Drip irrigation': { rank: '#1', eco: 'Best Option' },
+    //'Central Pivot Irrigation': { rank: '#2', eco: 'Drip irrigation' },
+    //'Sprinkler': { rank: '#3', eco: 'Central Pivot Irrigation' },
+    //'Flood irrigation': { rank: '#4', eco: 'Sprinkler' },
+  //};
+          
   // Function to handle pricing based on ZIP code
   function getPricing() {
     const zipcode = document.getElementById("zipcode").value;
