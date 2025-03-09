@@ -22,12 +22,12 @@ button {
   }
   
   /* Section for pricing results */
-  #pricing-results {
+ /* #pricing-results {
     margin-top: 20px;
     padding: 10px;
     background-color: #95be7f; /* Light green background for pricing results */
-    border-left: 5px solid #36c275; /* Green left border */
-  }
+   /* border-left: 5px solid #36c275; /* Green left border */
+  /*}
   
   /* Section for eco results */
   #eco-results {
