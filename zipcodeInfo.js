@@ -16,7 +16,8 @@ const mockData = {
   // Function to handle pricing based on ZIP code
   function getPricing() {
     const zipcode = document.getElementById("zipcode").value;
-    const pricing = mockData[zipcode];
+    const pricingPerFA = mockData[zipcode]; //price per Foot Acre for this zip code
+  
   
     if (pricing) {
       document.getElementById("pricing-results").innerHTML = `
@@ -26,19 +27,5 @@ const mockData = {
     } else {
       document.getElementById("pricing-results").innerHTML = "<p>No data available for this ZIP code.</p>";
     }
-  }
-  
-  // Function to handle eco-friendly suggestions based on material choice
-  function getEcoAlternative() {
-    const material = document.getElementById("material").value;
-    const alternative = ecoAlternatives[material];
-  
-    if (alternative) {
-      document.getElementById("eco-results").innerHTML = `
-        <p>Eco-Friendly Alternative: ${alternative.eco}</p>
-      `;
-    } else {
-      document.getElementById("eco-results").innerHTML = "<p>No eco-friendly alternative found for this material.</p>";
-    } 
   }
   

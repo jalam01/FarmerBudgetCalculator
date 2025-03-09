@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Financial Agricultural Resources Materials</title>
+  <title>Financial Agricultural Resources Managment</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -25,13 +25,12 @@
   </style>
 </head>
 <body>
-  <h1>Financial Agricultural Resources Materials</h1>
+  <h1>Financial Agricultural Resources Managment</h1>
 
   <!-- ZIP Code input -->
   <div class="container">
     <label for="zipcode">Enter Your ZIP Code:</label>
     <input type="text" id="zipcode" placeholder="Enter ZIP code">
-    <button onclick="getPricing()">Get Local Pricing</button>
   </div>
 
 
@@ -54,11 +53,14 @@
       <option value="Drip Irrigation">Drip Irrigation</option>
       <option value="Flood Irrigation">Flood Irrigation</option>
       <option value="Center Pivot">Center Pivot</option>
+    </select>
 
 
 
-    <button onclick="getEcoAlternative()">Get Eco-Friendly Alternative</button>
   </div>
+
+  <button onclick="getEcoAlternative()">Get Price Comparison</button>
+
 
   <!-- Display Eco-Friendly Results -->
   <div id="eco-results"></div>
@@ -82,7 +84,7 @@
 
 
     // Function to handle pricing based on ZIP code
-    function getPricing() {
+    function getPriceComparison() {
       const zipcode = document.getElementById("zipcode").value;
       const pricing = mockData[zipcode];
 
