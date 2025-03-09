@@ -4,6 +4,16 @@ const mockData = {
     '91962': { water_per_foot_acre: 65.0 },
     '91340': { water_per_foot_acre: 85.0 }
   };
+
+  const irrigationEfficiency = { 
+    //How water efficent it is (fraction) or how much water isnt lost to evaporation
+    "Sprinklers": 0.70,
+    "Drip_Irrigation": 0.95,
+    "Flood_Irrigation": 0.52,
+    "Center_Pivot":0.88
+
+  };
+  
   
   // Mock Eco-Friendly Suggestions
   //const ecoAlternatives = {
