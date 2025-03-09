@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Financial Agricultural Resources Managment</title>
-  <style>
+  <style src="style.css">
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
@@ -61,7 +61,6 @@
 
   <button onclick="getPricing()">Get Price Comparison</button>
 
-
   <!-- Display Eco-Friendly Results -->
   <div id="eco-results"></div>
 
@@ -69,7 +68,7 @@
   <div id="map"></div>
 
   <script src="zipcodeInfo.js">
-    // Mock Data for Pricing and Sales Tax based on ZIP code
+    // Mock Data for Pricing based on ZIP code
 const mockData = {
     '95340': { water_per_foot_acre: 50.0 },
     '91962': { water_per_foot_acre: 65.0 },
