@@ -21,8 +21,9 @@ const mockData = {
   
     if (pricing) {
       document.getElementById("pricing-results").innerHTML = `
-        <p>Local Sales Tax: ${pricing.sales_tax * 100}%</p>
-        <p>Material Cost: $${pricing.material_cost}</p>
+        <p>95340: ${water_per_foot_acre}%</p>
+        <p>91962: ${water_per_foot_acre}%</p>
+        <p>91340: ${water_per_foot_acre}%</p>
       `;
     } else {
       document.getElementById("pricing-results").innerHTML = "<p>No data available for this ZIP code.</p>";
