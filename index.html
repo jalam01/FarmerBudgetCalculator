@@ -59,7 +59,7 @@
 
   </div>
 
-  <button onclick="getEcoAlternative()">Get Price Comparison</button>
+  <button onclick="getPriceComparison()">Get Price Comparison</button>
 
 
   <!-- Display Eco-Friendly Results -->
@@ -98,19 +98,6 @@
       }
     }
 
-    // Function to handle eco-friendly suggestions based on material choice
-    function getEcoAlternative() {
-      const material = document.getElementById("material").value;
-      const alternative = ecoAlternatives[material];
-
-      if (alternative) {
-        document.getElementById("eco-results").innerHTML = `
-          <p>Eco-Friendly Alternative: ${alternative.eco}</p>
-        `;
-      } else {
-        document.getElementById("eco-results").innerHTML = "<p>No eco-friendly alternative found for this material.</p>";
-      }
-    }
   </script>
 </body>
 </html>
