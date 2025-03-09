@@ -72,7 +72,17 @@ const mockData = {
       m2Loss =  pricingPerFA.water_per_foot_acre * (1-irrigationEfficiency.Center_Pivot);
 
     }
-    console.log(m2Loss);
+    var m1DollarLostText = document.getElementById("m1Loss");
+    m1DollarLostText.innerHTML = m1Loss+ " dollars lost per acre foot of water"
+    var m2DollarLostText = document.getElementById("m2Loss");
+    m2DollarLostText.innerHTML = m2Loss+ " dollars lost per acre foot of water";
+
+    
+
+
+
+
+
 
     
 
