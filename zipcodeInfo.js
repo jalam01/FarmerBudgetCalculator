@@ -73,9 +73,9 @@ const mockData = {
 
     }
     var m1DollarLostText = document.getElementById("m1Loss");
-    m1DollarLostText.innerHTML = "Method 1 has" +m1Loss+ " dollars lost per acre foot of water"
+    m1DollarLostText.innerHTML = "Method 1 has " +m1Loss+ " dollars lost per acre foot of water"
     var m2DollarLostText = document.getElementById("m2Loss");
-    m2DollarLostText.innerHTML = "Method 2 has" +m2Loss+ " dollars lost per acre foot of water";
+    m2DollarLostText.innerHTML = "Method 2 has " +m2Loss+ " dollars lost per acre foot of water";
 
     
 
