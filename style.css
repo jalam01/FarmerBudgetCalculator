@@ -1,7 +1,4 @@
 
-
-
-
 button {
     
     display: inline-block;
@@ -21,14 +18,14 @@ button {
   
   .button:hover {
     background: linear-gradient(286deg, #00a562, #36c275 50%, #00d301);
-    color: #fff;
+    color: #000000;
   }
   
   /* Section for pricing results */
   #pricing-results {
     margin-top: 20px;
     padding: 10px;
-    background-color: #e1f7d5; /* Light green background for pricing results */
+    background-color: #95be7f; /* Light green background for pricing results */
     border-left: 5px solid #36c275; /* Green left border */
   }
   
