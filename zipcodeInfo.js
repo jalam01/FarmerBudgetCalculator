@@ -73,9 +73,20 @@ const mockData = {
 
     }
     var m1DollarLostText = document.getElementById("m1Loss");
-    m1DollarLostText.innerHTML = "Method 1 has " +m1Loss+ " dollars lost per acre foot of water"
+    m1DollarLostText.innerHTML = "You lose $" + Math.round(m1Loss * 100) / 100 + " per acre foot of water with " + m1.value;
     var m2DollarLostText = document.getElementById("m2Loss");
-    m2DollarLostText.innerHTML = "Method 2 has " +m2Loss+ " dollars lost per acre foot of water";
+    m2DollarLostText.innerHTML = "You'd lose $" + Math.round(m2Loss * 100) / 100 + " per acre foot of water with " + m2.value;
+
+    if(m1Loss > m2Loss){
+      document.getElementById("savingsDiff").innerHTML = "By switching you can save $" + Math.round((m1Loss - m2Loss) * 100) / 100 + " per acre foot of water";
+    }
+    else if(m1Loss < m2Loss){
+      document.getElementById("savingsDiff").innerHTML = "By switching you'd lose $" + Math.round((m2Loss - m1Loss) * 100) / 100 + " per acre foot of water used";
+
+
+    }
+
+
 
     
 
